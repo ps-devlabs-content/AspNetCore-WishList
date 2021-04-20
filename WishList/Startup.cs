@@ -17,6 +17,9 @@ namespace WishList
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // Ignore this line it's only here to prevent issues in the sandbox experience.
+            // Note: You shouldn't do this in applications outside this sandbox as it bypasses a security feature meant to prevent clickjacking attacks.
+            services.AddAntiforgery(o => o.SuppressXFrameOptionsHeader = true);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
