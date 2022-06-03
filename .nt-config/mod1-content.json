@@ -1,0 +1,87 @@
+[
+  {
+    "content_id": "826491ca-f466-4bdf-94b6-d07b9966f857",
+    "content_name": "Add Middleware/Configuration to Startup.cs",
+    "tasks": [
+      {
+        "description": "1.1 - Add MVC Middleware to ConfigureServices",
+        "contents": "In the `Program.cs` file, call `AddControllersWithViews();` on `builder.Services` to add support for MVC middleware.",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "1.1 - Add MVC Middleware to ConfigureServices",
+            "contents": "1.1 - Add MVC Middleware to ConfigureServices",
+            "command": "xunit -k @add-mvc-middleware-to-configureservices",
+            "failed_pattern": "Failed"
+          }
+        ]
+      },
+      {
+        "description": "1.2 - Add UseRouting in Configure",
+        "contents": "In the `Configure` method, remove the existing `app.Run` entirely and replace it with a call to `UseRouting` on `app`.",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "1.2 - Add UseRouting in Configure",
+            "contents": "1.2 - Add UseRouting in Configure",
+            "command": "xunit -k @configure-userouting-middleware-in-configure",
+            "failed_pattern": "Failed"
+          }
+        ]
+      },
+      {
+        "description": "1.3 - Add UseEndpoints in Configure",
+        "contents": "In the `Configure` method after `UseRouting` add a call to `UseEndpoints()` on `app` with an argument of `endpoints => { endpoints.MapDefaultControllerRoute(); }`",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "1.3 - Add UseEndpoints in Configure",
+            "contents": "1.3 - Add UseEndpoints in Configure",
+            "command": "xunit -k @configure-useendpoints-middleware-in-configure",
+            "failed_pattern": "Failed"
+          }
+        ]
+      },
+      {
+        "description": "1.4 - Configure Exception Handling",
+        "contents": "In the `Configure` method before `UseRouting`, add a condition that checks if `env` is set to Development using the  `IsDevelopment()` method.  - If Development, it should call `UseDeveloperExceptionPage` on `app` to get better detailed error pages.  - Otherwise, it should call `UseExceptionHandler` on `app` and pass it the argument `\"/Home/Error\"`.  Next, we'll create the generic Error page provided by this method.",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "1.4 - Configure Exception Handling",
+            "contents": "1.4 - Configure Exception Handling",
+            "command": "xunit -k @configure-exception-handling",
+            "failed_pattern": "Failed"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "name": "Add Middleware/Configuration to Startup.cs",
+        "blocks": [
+          {
+            "type": "markdown",
+            "contents": "Configure application to use MVC Framework as well as developer exception pages and error handler. Creating a view and controller to allow the user to access a home page and error page. \n\nIf you have any questions you can reference the `CompletedExercise` folder\n\n> Note: Please wait to run `Checks` until the `Terminal` says \n> ```\n> Ready to Run Checks\n> ```  "
+          },
+          {
+            "type": "task",
+            "contents": "1.1 - Add MVC Middleware to ConfigureServices"
+          },
+          {
+            "type": "task",
+            "contents": "1.2 - Add UseRouting in Configure"
+          },
+          {
+            "type": "task",
+            "contents": "1.3 - Add UseEndpoints in Configure"
+          },
+          {
+            "type": "task",
+            "contents": "1.4 - Configure Exception Handling"
+          }
+        ]
+      }
+    ]
+  }
+]
