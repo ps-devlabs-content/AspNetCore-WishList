@@ -15,7 +15,7 @@ namespace WishListTests
                 file = streamReader.ReadToEnd();
             }
 
-            Assert.True(file.Contains("Builder.Services.AddDbContext<ApplicationDbContext>"), "`Startup.cs`'s `Configure` did not contain a call to `ApplicationDbContext` with the `ApplicationDbContext` type.");
+            Assert.True(file.Contains("builder.Services.AddDbContext<ApplicationDbContext>"), "`Startup.cs`'s `Configure` did not contain a call to `ApplicationDbContext` with the `ApplicationDbContext` type.");
             Assert.True(file.Contains(@"options => options.UseInMemoryDatabase"), @"`Startup.cs`'s `Configure` called `AddDbContext` but did not provide it the argument `options => options.UseInMemoryDatabase(""WishList"")`.");
         }
     }
