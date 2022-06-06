@@ -1,0 +1,104 @@
+[
+  {
+    "content_id": "a8c3aefb-23dc-4dfa-9106-446fa4071223",
+    "content_name": "Create Home Views and the HomeController",
+    "tasks": [
+      {
+        "description": "2.1 - Create a Generic Welcome View",
+        "contents": "- Create a new view `Index` in the `WishList/Views/Home` folder. (you will need to make some of these folders) - The `Index` View should contain an `h1` tag welcoming the user. (Note: you should remove any generated HTML from this new view and any other views you create)",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "2.1 - Create a Generic Welcome View",
+            "contents": "2.1 - Create a Generic Welcome View",
+            "command": "dotnet test --filter \"FullyQualifiedName=WishListTests.CreateHomeViewsTests.CreateIndexViewTest\"",
+            "failed_pattern": "Failed"
+          }
+        ]
+      },
+      {
+        "description": "2.2 - Create a Generic Error View",
+        "contents": "- Create a new view `Error` in the `WishList/Views/Shared` folder. - This view should contain a `p` tag with the text `An error has occurred. Please try again.`",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "2.2 - Create a Generic Error View",
+            "contents": "2.2 - Create a Generic Error View",
+            "command": "dotnet test --filter \"FullyQualifiedName=WishListTests.CreateHomeViewsTests.CreateErrorViewTest\"",
+            "failed_pattern": "Failed"
+          }
+        ]
+      },
+      {
+        "description": "2.3 - Create the HomeController",
+        "contents": "Create a new controller `HomeController` inside the `Controllers` folder (you might need to create this folder)  - This should inherit the `Controller` class (you will need to add a `using` statement for the `Microsoft.AspNetCore.Mvc` namespace)",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "2.3 - Create the HomeController",
+            "contents": "2.3 - Create the HomeController",
+            "command": "dotnet test --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllerTest\"",
+            "failed_pattern": "Failed"
+          }
+        ]
+      },
+      {
+        "description": "2.4 - Create HomeController's Index Action",
+        "contents": "Create a new action `Index` in the `HomeController`  - This action should have a return type of `IActionResult`. - The return statement should return the `Index` view (specify the `Index` view in your return statement).",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "2.4 - Create HomeController's Index Action",
+            "contents": "2.4 - Create HomeController's Index Action",
+            "command": "dotnet test --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllersIndexActionTest\"",
+            "failed_pattern": "Failed"
+          }
+        ]
+      },
+      {
+        "description": "2.5 - Create HomeController's Error Action",
+        "contents": "Create a new action `Error` in the `HomeController`  - This action should have a return type of `IActionResult`. - The return statement should return the `Error` view (specify the `Error` view in your return statement).",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "2.5 - Create HomeController's Error Action",
+            "contents": "2.5 - Create HomeController's Error Action",
+            "command": "dotnet test --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllersErrorActionTest\"",
+            "failed_pattern": "Failed"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "name": "Create Home Views and the HomeController",
+        "blocks": [
+          {
+            "type": "markdown",
+            "contents": "Create the Home Views and the HomeController to provide the user with a home page (Index) and an Error page."
+          },
+          {
+            "type": "task",
+            "contents": "2.1 - Create a Generic Welcome View"
+          },
+          {
+            "type": "task",
+            "contents": "2.2 - Create a Generic Error View"
+          },
+          {
+            "type": "task",
+            "contents": "2.3 - Create the HomeController"
+          },
+          {
+            "type": "task",
+            "contents": "2.4 - Create HomeController's Index Action"
+          },
+          {
+            "type": "task",
+            "contents": "2.5 - Create HomeController's Error Action"
+          }
+        ]
+      }
+    ]
+  } 
+]
