@@ -1,0 +1,104 @@
+[
+  {
+    "content_id": "7222c676-c7bc-420e-94d3-369846be3be6",
+    "content_name": "Create Item Model With EntityFramework Support",
+    "tasks": [
+      {
+        "description": "3.1 - Create Class ApplicationDbContext",
+        "contents": "Create a class `ApplicationDbContext `that inherits the `DbContext` class in the `WishList/Data` folder. (you will need to make some of these folders) (Note: `DbContext` exists in the `Microsoft.EntityFrameworkCore` namespace)",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "3.1 - Create Class ApplicationDbContext",
+            "contents": "3.1 - Create Class ApplicationDbContext",
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateApplicationDbContextTests.CreateApplicationDbContextTest\"",
+            "failed_pattern": "Failed"
+          }
+        ]
+      },
+      {
+        "description": "3.2 - Add Constructor to ApplicationDbContext",
+        "contents": "Add a Constructor that accepts a parameter of type `DbContextOptions` named `options` and Invokes the `base` constructor as well. (you can accomplish this by adding `: base(options)` after the method signature)",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "3.2 - Add Constructor to ApplicationDbContext",
+            "contents": "3.2 - Add Constructor to ApplicationDbContext",
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateApplicationDbContextTests.AddConstructorToApplicationDbContextTest\"",
+            "failed_pattern": "Failed"
+          }
+        ]
+      },
+      {
+        "description": "3.3 - Configure EntityFramework",
+        "contents": "In the `ConfigureServices` method, call `AddDbContext<ApplicationDbContext>` on `services` with the argument `options => options.UseInMemoryDatabase(\"WishList\")` to point `EntityFramework` to the application's `DbContext`. (Note: You will need to add a `using` statement for `WishList.Data`)",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "3.3 - Configure EntityFramework",
+            "contents": "3.3 - Configure EntityFramework",
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.AddEntityFrameworkSupportTests.ConfigureEntityFrameworkTest\"",
+            "failed_pattern": "Failed"
+          }
+        ]
+      },
+      {
+        "description": "3.4 - Create Item Model",
+        "contents": "Create a new class `Item` in the `WishList/Models` folder. (You might need to create this folder)  - This class should contain a `public` property `Id` of type `int`. - This class should contain a `public` property `Description` of type `string`. - The `Description` property should have attributes of `Required` and `MaxLength(50)`. (Note: You'll need to add a using statement for `System.ComponentModel.DataAnnotations`)",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "3.4 - Create Item Model",
+            "contents": "3.4 - Create Item Model",
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateItemModelTests.CreateItemModelTest\"",
+            "failed_pattern": "Failed"
+          }
+        ]
+      },
+      {
+        "description": "3.5 - Add Item to ApplicationDbContext",
+        "contents": "In the `ApplicationDbContext` class, add a new `public` property named `Items` of type `DbSet<Item>`. (Note: You'll need to add a `using` statement for `WishList.Models`)",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "3.5 - Add Item to ApplicationDbContext",
+            "contents": "3.5 - Add Item to ApplicationDbContext",
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateItemModelTests.AddItemToApplicationDbContextTest\"",
+            "failed_pattern": "Failed"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "name": "Create Item Model With EntityFramework Support",
+        "blocks": [
+          {
+            "type": "markdown",
+            "contents": "Create our Item model as well as add and configure EntityFramework to store Items in an in-memory database."
+          },
+          {
+            "type": "task",
+            "contents": "3.1 - Create Class ApplicationDbContext"
+          },
+          {
+            "type": "task",
+            "contents": "3.2 - Add Constructor to ApplicationDbContext"
+          },
+          {
+            "type": "task",
+            "contents": "3.3 - Configure EntityFramework"
+          },
+          {
+            "type": "task",
+            "contents": "3.4 - Create Item Model"
+          },
+          {
+            "type": "task",
+            "contents": "3.5 - Add Item to ApplicationDbContext"
+          }
+        ]
+      }
+    ]
+  }
+]
