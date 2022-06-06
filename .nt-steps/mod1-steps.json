@@ -4,15 +4,15 @@
     "content_name": "Add Middleware/Configuration to Startup.cs",
     "tasks": [
       {
-        "description": "1.1 - Add MVC Middleware to WebApplicationBuilder.Services",
+        "description": "1.1 - Add MVC Middleware to WebApplication",
         "contents": "In the `Program.cs` file, call `AddControllersWithViews();` on `builder.Services` to add support for MVC middleware.",
         "checks": [
           {
             "type": "CustomTest",
             "description": "1.1 - Add MVC Middleware to WebApplicationBuilder.Services",
             "command": "bash {{ test }}",
-            "contents": "Semgrep -e 'builder.Services.AddControllersWithViews();' -l c# --exclude CompletedExercise",
-            "failed_pattern": "Failed"
+            "contents": "semgrep -e 'builder.Services.AddControllersWithViews();' -l C# --exclude CompletedExercise",
+            "failed_pattern": "0 findings"
           }
         ]
       },
@@ -24,21 +24,21 @@
             "type": "CustomTest",
             "description": "1.2 - Add UseRouting in Configure",
             "command": "bash {{ test }}",
-            "contents": "Semgrep -e 'builder.Services.AddControllersWithViews();' -l c# --exclude CompletedExercise",
-            "failed_pattern": "Failed"
+            "contents": "semgrep -e 'app.UseRouting();' -l C# --exclude CompletedExercise",
+            "failed_pattern": "0 findings"
           }
         ]
       },
       {
-        "description": "1.3 - Add UseEndpoints in Configure",
-        "contents": "Map the following `default` controller route \n ```app.MapControllerRoute(\n name: \"default\", \n  pattern: \"{controller=Home}/{action=Index}/{id?}\");\n```",
+        "description": "1.3 - Map the Default Controller Routes",
+        "contents": "Map the following `default` controller route \n ```\napp.MapControllerRoute(\n  name: \"default\", \n  pattern: \"{controller=Home}/{action=Index}/{id?}\");\n```",
         "checks": [
           {
             "type": "CustomTest",
             "description": "1.3 - Add UseEndpoints in Configure",
             "command": "bash {{ test }}",
-            "contents": "Semgrep -e 'app.MapControllerRoute(name: ..., pattern: ...)' -l c# --exclude CompletedExercise",
-            "failed_pattern": "Failed"
+            "contents": "semgrep -e 'app.MapControllerRoute(name: ..., pattern: ...)' -l C# --exclude CompletedExercise",
+            "failed_pattern": "0 findings"
           }
         ]
       },
@@ -50,8 +50,8 @@
             "type": "CustomTest",
             "description": "1.4 - Configure Exception Handling",
             "command": "bash {{ test }}",
-            "contents": "Semgrep -e 'app.Environment.IsDevelopment()' -l c# --exclude CompletedExercise, Semgrep -e 'app.UseExceptionHandler(\"/Home/Error\");' -l c# --exclude CompletedExercise",
-            "failed_pattern": "Failed"
+            "contents": "semgrep -e 'app.Environment.IsDevelopment()' -l C# --exclude CompletedExercise; \nsemgrep -e 'app.UseExceptionHandler(\"/Home/Error\");' -l C# --exclude CompletedExercise",
+            "failed_pattern": "0 findings"
           }
         ]
       }
@@ -66,7 +66,7 @@
           },
           {
             "type": "task",
-            "contents": "1.1 - Add MVC Middleware to ConfigureServices"
+            "contents": "1.1 - Add MVC Middleware to WebApplication"
           },
           {
             "type": "task",
@@ -74,7 +74,7 @@
           },
           {
             "type": "task",
-            "contents": "1.3 - Add UseEndpoints in Configure"
+            "contents": "1.3 - Map the Default Controller Routes"
           },
           {
             "type": "task",
