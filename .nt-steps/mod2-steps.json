@@ -11,8 +11,8 @@
             "type": "CustomTest",
             "description": "2.1 - Create a Generic Welcome View",
             "contents": "2.1 - Create a Generic Welcome View",
-            "command": "dotnet test --filter \"FullyQualifiedName=WishListTests.CreateHomeViewsTests.CreateIndexViewTest\"",
-            "failed_pattern": "Failed"
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeViewsTests.CreateIndexViewTest\"",
+            "failed_pattern": "Failed!"
           }
         ]
       },
@@ -24,8 +24,8 @@
             "type": "CustomTest",
             "description": "2.2 - Create a Generic Error View",
             "contents": "2.2 - Create a Generic Error View",
-            "command": "dotnet test --filter \"FullyQualifiedName=WishListTests.CreateHomeViewsTests.CreateErrorViewTest\"",
-            "failed_pattern": "Failed"
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeViewsTests.CreateErrorViewTest\"",
+            "failed_pattern": "Failed!"
           }
         ]
       },
@@ -37,8 +37,8 @@
             "type": "CustomTest",
             "description": "2.3 - Create the HomeController",
             "contents": "2.3 - Create the HomeController",
-            "command": "dotnet test --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllerTest\"",
-            "failed_pattern": "Failed"
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllerTest\"",
+            "failed_pattern": "Failed!"
           }
         ]
       },
@@ -50,8 +50,8 @@
             "type": "CustomTest",
             "description": "2.4 - Create HomeController's Index Action",
             "contents": "2.4 - Create HomeController's Index Action",
-            "command": "dotnet test --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllersIndexActionTest\"",
-            "failed_pattern": "Failed"
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllersIndexActionTest\"",
+            "failed_pattern": "Failed!"
           }
         ]
       },
@@ -63,8 +63,8 @@
             "type": "CustomTest",
             "description": "2.5 - Create HomeController's Error Action",
             "contents": "2.5 - Create HomeController's Error Action",
-            "command": "dotnet test --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllersErrorActionTest\"",
-            "failed_pattern": "Failed"
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllersErrorActionTest\"",
+            "failed_pattern": "Failed!"
           }
         ]
       }
