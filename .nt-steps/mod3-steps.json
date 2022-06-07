@@ -10,8 +10,8 @@
           {
             "type": "CustomTest",
             "description": "3.1 - Create Class ApplicationDbContext",
-            "contents": "3.1 - Create Class ApplicationDbContext",
-            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateApplicationDbContextTests.CreateApplicationDbContextTest\"",
+            "command": "bash {{ test }}",
+            "contents": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateApplicationDbContextTests.CreateApplicationDbContextTest\" | ./Exercise/.nt-steps/process.awk",
             "failed_pattern": "Failed"
           }
         ]
@@ -23,8 +23,8 @@
           {
             "type": "CustomTest",
             "description": "3.2 - Add Constructor to ApplicationDbContext",
-            "contents": "3.2 - Add Constructor to ApplicationDbContext",
-            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateApplicationDbContextTests.AddConstructorToApplicationDbContextTest\"",
+            "command": "bash {{ test }}",
+            "contents": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateApplicationDbContextTests.AddConstructorToApplicationDbContextTest\" | ./Exercise/.nt-steps/process.awk",
             "failed_pattern": "Failed"
           }
         ]
@@ -36,8 +36,8 @@
           {
             "type": "CustomTest",
             "description": "3.3 - Configure EntityFramework",
-            "contents": "3.3 - Configure EntityFramework",
-            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.AddEntityFrameworkSupportTests.ConfigureEntityFrameworkTest\"",
+            "command": "bash {{ test }}",
+            "contents": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.AddEntityFrameworkSupportTests.ConfigureEntityFrameworkTest\" | ./Exercise/.nt-steps/process.awk",
             "failed_pattern": "Failed"
           }
         ]
@@ -49,8 +49,8 @@
           {
             "type": "CustomTest",
             "description": "3.4 - Create Item Model",
-            "contents": "3.4 - Create Item Model",
-            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateItemModelTests.CreateItemModelTest\"",
+            "command": "bash {{ test }}",
+            "contents": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateItemModelTests.CreateItemModelTest\" | ./Exercise/.nt-steps/process.awk",
             "failed_pattern": "Failed"
           }
         ]
@@ -62,8 +62,8 @@
           {
             "type": "CustomTest",
             "description": "3.5 - Add Item to ApplicationDbContext",
-            "contents": "3.5 - Add Item to ApplicationDbContext",
-            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateItemModelTests.AddItemToApplicationDbContextTest\"",
+            "command": "bash {{ test }}",
+            "contents": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateItemModelTests.AddItemToApplicationDbContextTest\" | ./Exercise/.nt-steps/process.awk",
             "failed_pattern": "Failed"
           }
         ]
