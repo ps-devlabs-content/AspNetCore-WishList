@@ -24,7 +24,7 @@
             "type": "CustomTest",
             "description": "2.2 - Create a Generic Error View",
             "contents": "2.2 - Create a Generic Error View",
-            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeViewsTests.CreateErrorViewTest\"",
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeViewsTests.CreateErrorViewTest\" | ./Exercise/.nt-steps/process.awk",
             "failed_pattern": "Failed!"
           }
         ]
@@ -37,7 +37,7 @@
             "type": "CustomTest",
             "description": "2.3 - Create the HomeController",
             "contents": "2.3 - Create the HomeController",
-            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllerTest\"",
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllerTest\" | ./Exercise/.nt-steps/process.awk",
             "failed_pattern": "Failed!"
           }
         ]
@@ -50,7 +50,7 @@
             "type": "CustomTest",
             "description": "2.4 - Create HomeController's Index Action",
             "contents": "2.4 - Create HomeController's Index Action",
-            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllersIndexActionTest\"",
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllersIndexActionTest\" | ./Exercise/.nt-steps/process.awk",
             "failed_pattern": "Failed!"
           }
         ]
@@ -63,7 +63,7 @@
             "type": "CustomTest",
             "description": "2.5 - Create HomeController's Error Action",
             "contents": "2.5 - Create HomeController's Error Action",
-            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllersErrorActionTest\"",
+            "command": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateHomeControllerTests.CreateHomeControllersErrorActionTest\" | ./Exercise/.nt-steps/process.awk",
             "failed_pattern": "Failed!"
           }
         ]
