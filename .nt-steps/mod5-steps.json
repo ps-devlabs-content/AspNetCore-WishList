@@ -1,0 +1,104 @@
+[
+  {
+    "content_id": "536e2581-dbd0-41a0-a00b-fce9f7f55fda",
+    "content_name": "Create The ItemController",
+    "tasks": [
+      {
+        "description": "5.1 - Create ItemController",
+        "contents": "Create a new controller `ItemController` inside the `Controllers` folder that inherits the `Controller` class. (You will need to add a using statement for `Microsoft.AspNetCore.Mvc`)  - Create a `private` `readonly` field `_context` of type `ApplicationDbContext`, but do not instantiate it at this time. (Note: You will need to add a using statement to `WishList.Data`) - Create a new constructor that accepts a parameter of type `ApplicationDbContext ` This constructor should set `_context` to the provided `ApplicationDbContext` parameter.",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "5.1 - Create ItemController",
+            "command": "bash {{ test }}",
+            "contents": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateItemControllerTests.CreateItemControllerTest\" | ./Exercise/.nt-steps/process.awk",
+            "failed_pattern": "Failed!"
+          }
+        ]
+      },
+      {
+        "description": "5.2 - Create ItemController's Index Action",
+        "contents": "Create a new action `Index` in the `ItemController`.   - This action should have a return type of `IActionResult`. - This action should return the item's `Index` view. (Explicitly specify the view in the return statement) - This action should provide the `Index` view with a model of type `List<Item>` that contains all items in `_context.Items`.",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "5.2 - Create ItemController's Index Action",
+            "command": "bash {{ test }}",
+            "contents": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateItemControllerTests.CreateItemIndexActionTest\" | ./Exercise/.nt-steps/process.awk",
+            "failed_pattern": "Failed!"
+          }
+        ]
+      },
+      {
+        "description": "5.3 - Create ItemController's HttpGet Create Action",
+        "contents": "Create a new action `Create` in the `ItemController`.  - This action should have an attribute `HttpGet`. - This action should have a return type of `IActionResult`. - This action should return the `Create` view. (Explicitly specify the view in the return statement)",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "5.3 - Create ItemController's HttpGet Create Action",
+            "command": "bash {{ test }}",
+            "contents": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateItemControllerTests.CreateItemCreateHttpGetActionTest\" | ./Exercise/.nt-steps/process.awk",
+            "failed_pattern": "Failed!"
+          }
+        ]
+      },
+      {
+        "description": "5.4 - Create ItemController's HttpPost Create Action",
+        "contents": "Create a new action `Create` in the `ItemController`.  - This action should have an attribute `HttpPost`. - This action should accept a parameter of type `Item`. - This action should have a return type of `IActionResult`. - This action should add the provided `Item` to `_context.Items` (Note: Don't forget to call `SaveChanges()`) - This action should `RedirectToAction` to the `Index` action.",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "5.4 - Create ItemController's HttpPost Create Action",
+            "command": "bash {{ test }}",
+            "contents": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateItemControllerTests.CreateItemCreateHttpPostActionTest\" | ./Exercise/.nt-steps/process.awk",
+            "failed_pattern": "Failed!"
+          }
+        ]
+      },
+      {
+        "description": "5.5 - Create ItemController's Delete Action",
+        "contents": "Create a new action `Delete` in the `ItemController`.  - This action should accept an `int` parameter named `Id`; - This action should return a type of `IActionResult`. - This action should get the `Item` to be deleted from `_context.Items` using the provided `Id`, then remove the matching `Item` from `_context.Items`. (Note: Don't forget to call `SaveChanges()`) - This action should `RedirectToAction` to the `Index` action.",
+        "checks": [
+          {
+            "type": "CustomTest",
+            "description": "5.5 - Create ItemController's Delete Action",
+            "command": "bash {{ test }}",
+            "contents": "dotnet test ./Exercise --filter \"FullyQualifiedName=WishListTests.CreateItemControllerTests.CreateItemDeleteActionTest\" | ./Exercise/.nt-steps/process.awk",
+            "failed_pattern": "Failed!"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "name": "Create The ItemController",
+        "blocks": [
+          {
+            "type": "markdown",
+            "contents": "Create the ItemController with actions to present the Index and Create views, as well as actions to Create and Delete Item's from the wishlist.\n\nIf you have any questions you can reference the `CompletedExercise` folder\n\n> Note: Please wait to run `Checks` until the `Terminal` says \n> ```\n> Ready to Run Checks\n> ```    "
+          },
+          {
+            "type": "task",
+            "contents": "5.1 - Create ItemController"
+          },
+          {
+            "type": "task",
+            "contents": "5.2 - Create ItemController's Index Action"
+          },
+          {
+            "type": "task",
+            "contents": "5.3 - Create ItemController's HttpGet Create Action"
+          },
+          {
+            "type": "task",
+            "contents": "5.4 - Create ItemController's HttpPost Create Action"
+          },
+          {
+            "type": "task",
+            "contents": "5.5 - Create ItemController's Delete Action"
+          }
+        ]
+      }
+    ]
+  }
+]
